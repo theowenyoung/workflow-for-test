@@ -1,0 +1,12 @@
+on:
+  typeform:
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          answer: ${{ on.typeform.outputs.answers_map["What's your name?"] }}
+        run: |
+          echo answer: $answer

@@ -1,0 +1,32 @@
+on:
+  rsshub:
+    path: /v2ex/topics/latest
+    config:
+      active: true
+      skipOnError: true
+      format: |
+        if (item.description) {
+          item.description = item.description.replace(/<[^>]*>/g, "")
+          if (item.description) {
+            item.description = item.description.trim()
+            if (item.description.length > 25) {
+              item.description = `${item.description.substring(0, 25)}...`
+            }
+          }
+        }
+        if (item.title) {
+          item.title = item.title.replace(/\[来自.+\]/g, "")
+        }
+        return item
+jobs:
+  ifttt:
+    name: Make a Request to IFTTT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actionsflow/ifttt-webhook-action@v1
+        with:
+          event: test
+          key: ${{ secrets.IFTTT_KEY }}
+          value1: ${{on.rsshub.outputs.title}}
+          value2: ${{on.rsshub.outputs.description}}
+          value3: ${{on.rsshub.outputs.link}}

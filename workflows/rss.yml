@@ -1,11 +1,12 @@
 on:
   rss:
-    url: https://hnrss.org/newest?points=300&count=3
+    url: https://hnrss.org/newest?count=15
 jobs:
   print:
     name: Print
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
       - name: Print Outputs
         env:
           title: ${{on.rss.outputs.title}}

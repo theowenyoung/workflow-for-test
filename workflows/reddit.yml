@@ -1,0 +1,14 @@
+on:
+  reddit:
+    url: https://reddit.com/hot/
+jobs:
+  ifttt:
+    name: Make a Request to IFTTT
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actionsflow/ifttt-webhook-action@v1
+        with:
+          event: test
+          key: ${{ secrets.IFTTT_KEY }}
+          value1: ${{on.reddit.outputs.title}}
+          value3: ${{on.reddit.outputs.link}}
