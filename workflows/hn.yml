@@ -13,6 +13,7 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
+      active: false
       filterOutputs:
         title: 1
         link: 1
@@ -35,11 +36,3 @@ jobs:
           echo title: $title
           echo link: $link
           echo hostname: $hostname
-      - name: Slack notification
-        env:
-          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_RSS }}
-        uses: Ilshidur/action-slack@2.1.0
-        with:
-          args: |
-            *${{ on.rss.outputs.title }}* (`${{ on.rss.outputs.hostname }}`)
-            ${{ on.rss.outputs.link }}
