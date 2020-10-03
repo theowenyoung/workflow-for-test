@@ -13,6 +13,9 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
+      filterOutputs:
+        title: 1
+        link: 1
       format: |
         // extract hostname from full url
         item.hostname = new URL(item.link).hostname
@@ -32,11 +35,11 @@ jobs:
           echo title: $title
           echo link: $link
           echo hostname: $hostname
-      # - name: Slack notification
-      #   env:
-      #     SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_RSS }}
-      #   uses: Ilshidur/action-slack@2.1.0
-      #   with:
-      #     args: |
-      #       *${{ on.rss.outputs.title }}* (`${{ on.rss.outputs.hostname }}`)
-      #       ${{ on.rss.outputs.link }}
+      - name: Slack notification
+        env:
+          SLACK_WEBHOOK: ${{ secrets.SLACK_WEBHOOK_RSS }}
+        uses: Ilshidur/action-slack@2.1.0
+        with:
+          args: |
+            *${{ on.rss.outputs.title }}* (`${{ on.rss.outputs.hostname }}`)
+            ${{ on.rss.outputs.link }}
