@@ -8,7 +8,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Actionsflow Clean
-        uses: actionsflow/actionsflow-action@v1
+        uses: actionsflow/actionsflow-action@fixs/3
         with:
           args: clean
           json-secrets: ${{ toJSON(secrets) }}
