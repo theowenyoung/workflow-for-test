@@ -3,7 +3,7 @@ on:
   rss:
     url: https://hnrss.org/newest?points=300&count=1
     config:
-      force: true
+      active: false
 jobs:
   email:
     name: Post a email
