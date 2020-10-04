@@ -13,10 +13,6 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
-      active: false
-      filterOutputs:
-        title: 1
-        link: 1
       format: |
         // extract hostname from full url
         item.hostname = new URL(item.link).hostname
