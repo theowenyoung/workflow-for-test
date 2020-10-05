@@ -1,0 +1,13 @@
+on:
+  telegram:
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Print Outputs
+        env:
+          title: ${{on.telegram.outputs.text}}
+        run: |
+          echo title: $title
