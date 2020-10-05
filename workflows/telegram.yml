@@ -1,5 +1,5 @@
 on:
-  telegram:
+  telegram_bot:
 jobs:
   print:
     name: Print
