@@ -1,5 +1,6 @@
 on:
   telegram_bot:
+    webhook: true
 jobs:
   print:
     name: Print
