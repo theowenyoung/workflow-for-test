@@ -4,8 +4,8 @@ on:
       force: true
       onlyRunManually: true
       manualRunEvent: workflow_dispatch
-   run: |
-    return [{title:"test",id:"1"}]
+    run: |
+      return [{title:"test",id:"1"}]
 jobs:
   notify:
     name: Send notifications
