@@ -1,26 +1,9 @@
 on:
-  rss:
-    url:
-      # HN posts with over 500 points
-      - https://hnrss.org/newest?points=500
-      # Show HN posts with over 100 points
-      - https://hnrss.org/show?points=100
-      #
-      #
-      #
-      # Dev blog to an interesting upcoming german Minecraft server
-      - https://blog.playlegend.net/rss
-      # test
-      - https://dev.to/feed/tag/javascript
+  script:
     config:
       every: 25 * * * *
-      filterOutputs:
-        title: 1
-        contentSnippet: 1
-        link: 1
-      format: 
-        item.contentSnippet = item.contentSnippet.substr(0,50);
-        return item;
+    run: |
+      return [{title:"digest",id:Date.now()}]
 jobs:
   notify:
     name: Send notifications
@@ -35,6 +18,4 @@ jobs:
             定时推送2：
 
             *${{on.rss.outputs.title}}*
-            
-            ${{on.rss.outputs.contentSnippet}} ${{on.rss.outputs.link}}
           format: markdown
