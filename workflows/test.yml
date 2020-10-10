@@ -1,11 +1,7 @@
 on:
   script:
     config:
-      force: true
-      skipSchedule: true
-      manualRunEvent: 
-        - workflow_dispatch
-        - push
+      debug: true
     run: |
       return [{title:"test",id:"1"}]
 jobs:
