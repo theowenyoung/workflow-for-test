@@ -13,7 +13,7 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
-      every: 0 * * * *
+      every: 20 * * * *
       filterOutputs:
         title: 1
         contentSnippet: 1
