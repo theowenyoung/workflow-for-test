@@ -3,7 +3,6 @@ on:
   youtube:
     config:
       active: false
-      skipSchedule: true
     channel_id:
       - UCnCikd0s4i9KoDtaHPlK-JA
       - UCseUQK4kC3x2x543nHtGpzw

@@ -3,7 +3,6 @@ on:
     path: /v2ex/topics/latest
     config:
       active: true
-      skipSchedule: true
       skipOnError: true
       format: |
         if (item.description) {

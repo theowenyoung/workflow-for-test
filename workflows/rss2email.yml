@@ -2,8 +2,6 @@ name: Send email new RSS Feed items
 on:
   rss:
     url: https://hnrss.org/newest?points=300&count=1
-    config:
-      active: false
 jobs:
   email:
     name: Post a email

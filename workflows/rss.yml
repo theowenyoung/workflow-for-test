@@ -1,8 +1,6 @@
 on:
   rss:
     url: https://hnrss.org/newest?count=15
-    config:
-      skipSchedule: true
 jobs:
   print:
     name: Print
