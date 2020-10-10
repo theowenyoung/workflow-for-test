@@ -18,6 +18,9 @@ on:
         title: 1
         contentSnippet: 1
         link: 1
+      format: 
+        item.contentSnippet = item.contentSnippet.substr(0,50);
+        return item;
 jobs:
   notify:
     name: Send notifications
