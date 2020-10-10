@@ -13,6 +13,7 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
+      skipSchedule: true
       format: |
         // extract hostname from full url
         item.hostname = new URL(item.link).hostname

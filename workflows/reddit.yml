@@ -1,6 +1,8 @@
 on:
   reddit:
     url: https://reddit.com/hot/
+    config:
+      skipSchedule: true
 jobs:
   ifttt:
     name: Make a Request to IFTTT
