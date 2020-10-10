@@ -17,5 +17,5 @@ jobs:
           message: |
             定时推送5：
 
-            *${{on.rss.outputs.title}}*
+            *${{on.script.outputs.title}}*
           format: markdown
