@@ -13,7 +13,7 @@ on:
       # test
       - https://dev.to/feed/tag/javascript
     config:
-      every: 35 * * * *
+      every: 50 * * * *
       filterOutputs:
         title: 1
         contentSnippet: 1
@@ -32,6 +32,8 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
+            定时推送：
+
             *${{on.rss.outputs.title}}*
             
             ${{on.rss.outputs.contentSnippet}} ${{on.rss.outputs.link}}
