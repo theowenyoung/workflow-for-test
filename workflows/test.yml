@@ -16,7 +16,7 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
         with:
-          to: -1001462218950
+          to: "-1001462218950"
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
             channel:
