@@ -2,8 +2,10 @@ on:
   script:
     config:
       force: true
-      onlyRunManually: true
-      manualRunEvent: workflow_dispatch
+      skipSchedule: true
+      manualRunEvent: 
+        - workflow_dispatch
+        - push
     run: |
       return [{title:"test",id:"1"}]
 jobs:
@@ -14,9 +16,9 @@ jobs:
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
         with:
-          to: ${{ secrets.TELEGRAM_TO }}
+          to: -1001462218950
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            channge:
+            channel:
             *${{on.script.outputs.title}}*
           format: markdown
