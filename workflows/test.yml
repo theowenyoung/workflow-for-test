@@ -1,0 +1,22 @@
+on:
+  script:
+    config:
+      force: true
+      onlyRunManually: true
+      manualRunEvent: workflow_dispatch
+   run: |
+    return [{title:"test",id:"1"}]
+jobs:
+  notify:
+    name: Send notifications
+    runs-on: ubuntu-latest
+    steps:
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@v0.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: |
+            channge:
+            *${{on.script.outputs.title}}*
+          format: markdown
