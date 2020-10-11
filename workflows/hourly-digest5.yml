@@ -3,7 +3,7 @@ on:
     config:
       every: 55 * * * *
     run: |
-      return [{title:"digest",id:Date.now()}]
+      return [{title:"digest",time:new Date(),id:Date.now()}]
 jobs:
   notify:
     name: Send notifications
@@ -18,4 +18,6 @@ jobs:
             定时推送5：
 
             *${{on.script.outputs.title}}*
+            
+            ${{on.script.outputs.time}}
           format: markdown
