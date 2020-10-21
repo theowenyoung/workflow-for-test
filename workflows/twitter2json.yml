@@ -25,6 +25,7 @@ jobs:
         with:
           persist-credentials: false
           fetch-depth: 0
+      - run: ls -l data/tweets
       - name: create tweet json
         id: create-json
         uses: jsdaniell/create-json@1.1.2
@@ -32,6 +33,7 @@ jobs:
           name: "${{ on.twitter.outputs.id_str }}.json"
           json: ${{ toJSON(on.twitter.outputs) }}
           dir: 'data/tweets'
+      - run: ls -l data/tweets
       - uses: actions-go/push@master
         with:
           commit-message: '[Auto] update pre-puilt dist packages'
