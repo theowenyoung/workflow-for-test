@@ -1,0 +1,28 @@
+on:
+  twitter:
+    api: statuses/user_timeline
+    auth:
+      consumer_key: ${{ secrets.TWITTER_CONSUMER_KEY }}
+      consumer_secret: ${{ secrets.TWITTER_CONSUMER_SECRET }}
+      access_token: ${{ secrets.TWITTER_ACCESS_TOKEN }}
+      access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
+    params:
+      screen_name: theowenyoung
+      count: 2
+    fetchAllResultsAtFirst: true
+    maxCount: 1
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 0
+      - name: create tweet json
+        id: create-json
+        uses: jsdaniell/create-json@1.1.2
+        with:
+          name: "${{ on.twitter.outputs.id_str }}.json"
+          json: ${{ toJSON(on.twitter.outputs) }}
+          dir: 'data/tweets'
