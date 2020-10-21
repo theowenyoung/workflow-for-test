@@ -26,3 +26,12 @@ jobs:
           name: "${{ on.twitter.outputs.id_str }}.json"
           json: ${{ toJSON(on.twitter.outputs) }}
           dir: 'data/tweets'
+      - name: Configure CI Git User
+        run: |
+          git config user.name github-actions[bot]
+          git config user.email github-actions[bot]@users.noreply.github.com
+      - name: Git Push
+        run: |
+          git add data/*
+          git commit -m "chore: update tweet data"
+          git push
