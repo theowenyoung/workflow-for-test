@@ -23,6 +23,7 @@ jobs:
     steps:
       - uses: actions/checkout@v2
         with:
+          persist-credentials: false
           fetch-depth: 0
       - name: create tweet json
         id: create-json
@@ -31,13 +32,20 @@ jobs:
           name: "${{ on.twitter.outputs.id_str }}.json"
           json: ${{ toJSON(on.twitter.outputs) }}
           dir: 'data/tweets'
+      - uses: actions-go/push@master
+        with:
+          commit-message: '[Auto] update pre-puilt dist packages'
+        remote: origin
       - name: Setup git
+        if: false
         run: apt update -y && apt install -y git-all
       - name: Configure CI Git User
+        if: false
         run: |
           git config user.name github-actions[bot]
           git config user.email github-actions[bot]@users.noreply.github.com
       - name: Git Push
+        if: false
         run: |
           git remote -v
           git status
