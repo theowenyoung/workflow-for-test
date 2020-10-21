@@ -14,7 +14,7 @@ jobs:
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:
-          args: build
+          args: "build -i \"twitter*\""
           json-secrets: ${{ toJSON(secrets) }}
           json-github: ${{ toJSON(github) }}
       - name: Setup act
