@@ -32,7 +32,7 @@ jobs:
           json: ${{ toJSON(on.twitter.outputs) }}
           dir: 'data/tweets'
       - name: Setup git
-        run: apt-get update && apt install git-all
+        run: apt update -y && apt install -y git-all
       - name: Configure CI Git User
         run: |
           git config user.name github-actions[bot]
