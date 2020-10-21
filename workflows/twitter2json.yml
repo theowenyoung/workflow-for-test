@@ -8,9 +8,9 @@ on:
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
       screen_name: theowenyoung
-      count: 2
+      count: 4
     fetchAllResultsAtFirst: true
-    maxCount: 1
+    maxCount: 4
     config:
       force: true
       manualRunEvent:
