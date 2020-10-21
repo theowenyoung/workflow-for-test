@@ -34,7 +34,12 @@ jobs:
           json: ${{ toJSON(on.twitter.outputs) }}
           dir: 'data/tweets'
       - run: ls -l data/tweets
+      - name: Commit & Push changes
+        uses: actions-js/push@master
+        with:
+          github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions-go/push@master
+        if: false
         with:
           commit-message: '[Auto] update pre-puilt dist packages'
         remote: origin
