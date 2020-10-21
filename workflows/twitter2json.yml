@@ -11,6 +11,11 @@ on:
       count: 2
     fetchAllResultsAtFirst: true
     maxCount: 1
+    config:
+      force: true
+      manualRunEvent:
+        - workflow_dispatch
+        - push
 jobs:
   print:
     name: Print
