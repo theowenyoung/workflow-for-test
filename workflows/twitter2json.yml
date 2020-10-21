@@ -39,6 +39,8 @@ jobs:
           git config user.email github-actions[bot]@users.noreply.github.com
       - name: Git Push
         run: |
+          git remote -v
+          git status
           git add data/*
           git commit -m "chore: update tweet data"
-          git push
+          git push origin main
