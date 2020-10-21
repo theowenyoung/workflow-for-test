@@ -12,6 +12,7 @@ on:
     fetchAllResultsAtFirst: true
     maxCount: 4
     config:
+      active: false
       force: true
       manualRunEvent:
         - workflow_dispatch
@@ -36,6 +37,7 @@ jobs:
       - run: ls -l data/tweets
       - name: Commit & Push changes
         uses: actions-js/push@master
+        if: false
         with:
           github_token: ${{ secrets.GITHUB_TOKEN }}
       - uses: actions-go/push@master
