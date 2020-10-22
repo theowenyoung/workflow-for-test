@@ -8,11 +8,12 @@ on:
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
       screen_name: theowenyoung
-      count: 4
+      count: 8
     fetchAllResultsAtFirst: true
-    maxCount: 4
+    maxCount: 8
     config:
-      active: false
+      outputsMode: combine
+      outputsLength: 2
       force: true
       manualRunEvent:
         - workflow_dispatch
@@ -29,11 +30,24 @@ jobs:
       - run: ls -l data/tweets
       - name: create tweet json
         id: create-json
-        uses: jsdaniell/create-json@1.1.2
+        uses: actions/github-script@v3
         with:
-          name: "${{ on.twitter.outputs.id_str }}.json"
-          json: ${{ toJSON(on.twitter.outputs) }}
-          dir: 'data/tweets'
+          script: |
+            const fs = require('fs')
+            const createFile = (path, content)=>{
+              return new Promise((resolve,reject)=>{
+                fs.writeFile(path,content,(e)=>{
+                  if(e){
+                    return reject(e)
+                  }else{
+                    return resolve()
+                  }
+                })
+              })
+            }
+            const test =  ${{on.twitter.outputs.length}}
+            return length
+
       - run: ls -l data/tweets
       - name: Commit & Push changes
         uses: actions-js/push@master
@@ -45,19 +59,3 @@ jobs:
         with:
           commit-message: '[Auto] update pre-puilt dist packages'
         remote: origin
-      - name: Setup git
-        if: false
-        run: apt update -y && apt install -y git-all
-      - name: Configure CI Git User
-        if: false
-        run: |
-          git config user.name github-actions[bot]
-          git config user.email github-actions[bot]@users.noreply.github.com
-      - name: Git Push
-        if: false
-        run: |
-          git remote -v
-          git status
-          git add data/*
-          git commit -m "chore: update tweet data"
-          git push origin main
