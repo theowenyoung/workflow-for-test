@@ -46,7 +46,8 @@ jobs:
               })
             }
             const test =  ${{on.twitter.outputs.length}}
-            return length
+            console.log('test',test)
+            return test
 
       - run: ls -l data/tweets
       - name: Commit & Push changes
