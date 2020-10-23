@@ -14,7 +14,6 @@ on:
     config:
       active: true
       outputsMode: combine
-      outputsLength: 2
       force: true
       manualRunEvent:
         - workflow_dispatch
@@ -32,10 +31,12 @@ jobs:
       - name: create tweet json
         id: create-json
         uses: actions/github-script@v3
+        env:
+          OUTPUTS: ${{toJSON(on.twitter.outputs)}}
         with:
           script: |
             const fs = require('fs').promises
-            const outputs =  ${{on.twitter.outputs}}
+            const outputs = JSON.parse(process.env.OUTPUTS);
             const promises = outputs.map((output) => {
               return fs.writeFile(
                 `./data/tweets/${output.id_str}.json`,
