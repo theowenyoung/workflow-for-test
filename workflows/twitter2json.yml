@@ -12,7 +12,7 @@ on:
     fetchAllResultsAtFirst: true
     maxCount: 8
     config:
-      active: false
+      active: true
       outputsMode: combine
       outputsLength: 2
       force: true
