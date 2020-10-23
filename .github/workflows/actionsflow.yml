@@ -19,5 +19,6 @@ jobs:
           json-github: ${{ toJSON(github) }}
       - name: Setup act
         uses: actionsflow/setup-act-for-actionsflow@main
+      - run: cat ~/.actrc
       - name: Run act
         run: act --workflows ./dist/workflows --secret-file ./dist/.secrets --eventpath ./dist/event.json --env-file ./dist/.env

@@ -31,12 +31,10 @@ jobs:
       - name: create tweet json
         id: create-json
         uses: actions/github-script@v3
-        env:
-          OUTPUTS: ${{toJSON(on.twitter.outputs)}}
         with:
           script: |
             const fs = require('fs').promises
-            const outputs = JSON.parse(process.env.OUTPUTS);
+            const outputs = ${{toJSON(on.twitter.outputs)}}
             const promises = outputs.map((output) => {
               return fs.writeFile(
                 `./data/tweets/${output.id_str}.json`,
@@ -45,23 +43,10 @@ jobs:
             });
             await Promise.all(promises);
             return outputs.length
-      - run: ls -l data/tweets
-      - name: Commit & Push changes
-        uses: actions-js/push@master
-        if: false
-        with:
-          github_token: ${{ secrets.GITHUB_TOKEN }}
-      - uses: actions-go/push@master
-        if: false
-        with:
-          commit-message: '[Auto] update pre-puilt dist packages'
-        remote: origin
       - name: Commit changes
         uses: EndBug/add-and-commit@v5
         with:
-          author_name: Your Name
-          author_email: mail@example.com
-          message: "Your commit message"
+          message: "chore: add tweet data"
           add: "data/tweets/*"
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
