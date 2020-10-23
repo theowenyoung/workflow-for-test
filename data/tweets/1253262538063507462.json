@@ -1,0 +1,308 @@
+{
+  "contributors": null,
+  "coordinates": null,
+  "created_at": "Thu Apr 23 10:00:48 +0000 2020",
+  "display_text_range": [
+    0,
+    140
+  ],
+  "entities": {
+    "hashtags": [],
+    "symbols": [],
+    "urls": [
+      {
+        "display_url": "vercel.com/blog/zeit-is-n…",
+        "expanded_url": "https://vercel.com/blog/zeit-is-now-vercel",
+        "indices": [
+          95,
+          118
+        ],
+        "url": "https://t.co/7smdU5Gsl5"
+      }
+    ],
+    "user_mentions": [
+      {
+        "id": 4686835494,
+        "id_str": "4686835494",
+        "indices": [
+          3,
+          10
+        ],
+        "name": "Vercel",
+        "screen_name": "vercel"
+      }
+    ]
+  },
+  "favorite_count": 0,
+  "favorited": false,
+  "full_text": "RT @vercel: ZEIT is now Vercel.\n\nAnnouncing our new brand identity and $21M Series A funding.\n\nhttps://t.co/7smdU5Gsl5 https://t.co/jNoVXnq…",
+  "geo": null,
+  "id": 1253262538063507500,
+  "id_str": "1253262538063507462",
+  "in_reply_to_screen_name": null,
+  "in_reply_to_status_id": null,
+  "in_reply_to_status_id_str": null,
+  "in_reply_to_user_id": null,
+  "in_reply_to_user_id_str": null,
+  "is_quote_status": false,
+  "lang": "en",
+  "place": null,
+  "possibly_sensitive": false,
+  "retweet_count": 646,
+  "retweeted": true,
+  "retweeted_status": {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Tue Apr 21 09:35:08 +0000 2020",
+    "display_text_range": [
+      0,
+      106
+    ],
+    "entities": {
+      "hashtags": [],
+      "media": [
+        {
+          "display_url": "pic.twitter.com/jNoVXnqpRD",
+          "expanded_url": "https://twitter.com/zeithq/status/1252531304161304576/photo/1",
+          "id": 1252531248641212400,
+          "id_str": "1252531248641212419",
+          "indices": [
+            107,
+            130
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/EWHiiNFWAAM0Aom.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/EWHiiNFWAAM0Aom.jpg",
+          "sizes": {
+            "large": {
+              "h": 800,
+              "resize": "fit",
+              "w": 1600
+            },
+            "medium": {
+              "h": 600,
+              "resize": "fit",
+              "w": 1200
+            },
+            "small": {
+              "h": 340,
+              "resize": "fit",
+              "w": 680
+            },
+            "thumb": {
+              "h": 150,
+              "resize": "crop",
+              "w": 150
+            }
+          },
+          "type": "photo",
+          "url": "https://t.co/jNoVXnqpRD"
+        }
+      ],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "vercel.com/blog/zeit-is-n…",
+          "expanded_url": "https://vercel.com/blog/zeit-is-now-vercel",
+          "indices": [
+            83,
+            106
+          ],
+          "url": "https://t.co/7smdU5Gsl5"
+        }
+      ],
+      "user_mentions": []
+    },
+    "extended_entities": {
+      "media": [
+        {
+          "display_url": "pic.twitter.com/jNoVXnqpRD",
+          "expanded_url": "https://twitter.com/zeithq/status/1252531304161304576/photo/1",
+          "id": 1252531248641212400,
+          "id_str": "1252531248641212419",
+          "indices": [
+            107,
+            130
+          ],
+          "media_url": "http://pbs.twimg.com/tweet_video_thumb/EWHiiNFWAAM0Aom.jpg",
+          "media_url_https": "https://pbs.twimg.com/tweet_video_thumb/EWHiiNFWAAM0Aom.jpg",
+          "sizes": {
+            "large": {
+              "h": 800,
+              "resize": "fit",
+              "w": 1600
+            },
+            "medium": {
+              "h": 600,
+              "resize": "fit",
+              "w": 1200
+            },
+            "small": {
+              "h": 340,
+              "resize": "fit",
+              "w": 680
+            },
+            "thumb": {
+              "h": 150,
+              "resize": "crop",
+              "w": 150
+            }
+          },
+          "type": "animated_gif",
+          "url": "https://t.co/jNoVXnqpRD",
+          "video_info": {
+            "aspect_ratio": [
+              2,
+              1
+            ],
+            "variants": [
+              {
+                "bitrate": 0,
+                "content_type": "video/mp4",
+                "url": "https://video.twimg.com/tweet_video/EWHiiNFWAAM0Aom.mp4"
+              }
+            ]
+          }
+        }
+      ]
+    },
+    "favorite_count": 2519,
+    "favorited": false,
+    "full_text": "ZEIT is now Vercel.\n\nAnnouncing our new brand identity and $21M Series A funding.\n\nhttps://t.co/7smdU5Gsl5 https://t.co/jNoVXnqpRD",
+    "geo": null,
+    "id": 1252531304161304600,
+    "id_str": "1252531304161304576",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "en",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 646,
+    "retweeted": true,
+    "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Fri Jan 01 03:49:12 +0000 2016",
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Develop. Preview. Ship. - Creators of https://t.co/7Cy9nMdB8w, the React framework for production.",
+      "entities": {
+        "description": {
+          "urls": [
+            {
+              "display_url": "nextjs.org",
+              "expanded_url": "http://nextjs.org",
+              "indices": [
+                38,
+                61
+              ],
+              "url": "https://t.co/7Cy9nMdB8w"
+            }
+          ]
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "vercel.com",
+              "expanded_url": "https://vercel.com",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/AtroKa8CHC"
+            }
+          ]
+        }
+      },
+      "favourites_count": 1229,
+      "follow_request_sent": false,
+      "followers_count": 53325,
+      "following": true,
+      "friends_count": 32,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 4686835494,
+      "id_str": "4686835494",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": null,
+      "listed_count": 837,
+      "location": "San Francisco & Global",
+      "name": "Vercel",
+      "notifications": false,
+      "profile_background_color": "000000",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/4686835494/1595401413",
+      "profile_image_url": "http://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/1252531684353998848/6R0-p1Vf_normal.jpg",
+      "profile_link_color": "000000",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "000000",
+      "profile_text_color": "000000",
+      "profile_use_background_image": false,
+      "protected": false,
+      "screen_name": "vercel",
+      "statuses_count": 1077,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/AtroKa8CHC",
+      "utc_offset": null,
+      "verified": false
+    }
+  },
+  "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+  "truncated": false,
+  "user": {
+    "contributors_enabled": false,
+    "created_at": "Sat Mar 21 09:24:27 +0000 2020",
+    "default_profile": true,
+    "default_profile_image": false,
+    "description": "Freelancer / perfectionism / workflow lover",
+    "entities": {
+      "description": {
+        "urls": []
+      }
+    },
+    "favourites_count": 12,
+    "follow_request_sent": false,
+    "followers_count": 12,
+    "following": false,
+    "friends_count": 75,
+    "geo_enabled": false,
+    "has_extended_profile": true,
+    "id": 1241294513575878700,
+    "id_str": "1241294513575878656",
+    "is_translation_enabled": false,
+    "is_translator": false,
+    "lang": null,
+    "listed_count": 1,
+    "location": "",
+    "name": "Owen Young",
+    "notifications": false,
+    "profile_background_color": "F5F8FA",
+    "profile_background_image_url": null,
+    "profile_background_image_url_https": null,
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1241298955742273536/E26HEH2o_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1241298955742273536/E26HEH2o_normal.jpg",
+    "profile_link_color": "1DA1F2",
+    "profile_sidebar_border_color": "C0DEED",
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "protected": false,
+    "screen_name": "TheOwenYoung",
+    "statuses_count": 14,
+    "time_zone": null,
+    "translator_type": "none",
+    "url": null,
+    "utc_offset": null,
+    "verified": false
+  }
+}
