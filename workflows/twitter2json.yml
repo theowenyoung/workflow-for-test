@@ -37,13 +37,15 @@ jobs:
             const promises = outputs.map((output) => {
                 const createdAt = new Date(Date.parse(output.created_at))
                 const tweetFilePath = `./data/tweets/${createdAt.getFullYear()}/${createdAt.getFullMonth()}/${output.id_str}.json`
-                await fs.mkdir(path.dirname(tweetFilePath), {
+                return fs.mkdir(path.dirname(tweetFilePath), {
                     recursive: true
-                });
-                return fs.writeFile(
-                    tweetFilePath,
-                    JSON.stringify(output, null, 2)
-                );
+                }).then(()=>{
+                  return fs.writeFile(
+                      tweetFilePath,
+                      JSON.stringify(output, null, 2)
+                  );
+                })
+  
             });
             await Promise.all(promises);
             return outputs.length
