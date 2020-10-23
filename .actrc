@@ -1,1 +1,1 @@
--P actionsflow/act-environment:latest
+-P ubuntu-latest=actionsflow/act-environment:latest
