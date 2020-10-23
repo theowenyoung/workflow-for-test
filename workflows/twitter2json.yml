@@ -46,7 +46,9 @@ jobs:
             await Promise.all(promises);
             return outputs.length
       - run: ls -l data/tweets
+      - run: date
       - run: apt update -y && apt install -y git
+      - run: date
       - name: Commit & Push changes
         uses: actions-js/push@master
         if: false
