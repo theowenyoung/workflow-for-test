@@ -34,22 +34,13 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const fs = require('fs')
-            const createFile = (path, content)=>{
-              return new Promise((resolve,reject)=>{
-                fs.writeFile(path,content,(e)=>{
-                  if(e){
-                    return reject(e)
-                  }else{
-                    return resolve()
-                  }
-                })
-              })
-            }
-            const test =  ${{on.twitter.outputs.length}}
-            console.log('test',test)
-            return test
-
+            const fs = require('fs').promises
+            const outputs =  ${{on.twitter.outputs}}
+            const promises = outputs.map(output=>{
+              return fs.writeFile(`./data/tweets/{output.id_str}.json`,JSON.stringify(output,null,2))
+            })
+            await Promise.all(promises);
+            return outputs.length
       - run: ls -l data/tweets
       - name: Commit & Push changes
         uses: actions-js/push@master
