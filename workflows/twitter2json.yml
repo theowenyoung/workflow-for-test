@@ -31,13 +31,19 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
+            const path = requrie('path')
             const fs = require('fs').promises
             const outputs = ${{toJSON(on.twitter.outputs)}}
             const promises = outputs.map((output) => {
-              return fs.writeFile(
-                `./data/tweets/${output.id_str}.json`,
-                JSON.stringify(output, null, 2)
-              );
+                const createdAt = new Date(Date.parse(output.created_at))
+                const tweetFilePath = `./data/tweets/${createdAt.getFullYear()}/${createdAt.getFullMonth()}/${output.id_str}.json`
+                await fs.mkdir(path.dirname(tweetFilePath), {
+                    recursive: true
+                });
+                return fs.writeFile(
+                    tweetFilePath,
+                    JSON.stringify(output, null, 2)
+                );
             });
             await Promise.all(promises);
             return outputs.length
