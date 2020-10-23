@@ -36,9 +36,12 @@ jobs:
           script: |
             const fs = require('fs').promises
             const outputs =  ${{on.twitter.outputs}}
-            const promises = outputs.map(output=>{
-              return fs.writeFile(`./data/tweets/{output.id_str}.json`,JSON.stringify(output,null,2))
-            })
+            const promises = outputs.map((output) => {
+              return fs.writeFile(
+                `./data/tweets/${output.id_str}.json`,
+                JSON.stringify(output, null, 2)
+              );
+            });
             await Promise.all(promises);
             return outputs.length
       - run: ls -l data/tweets
@@ -52,3 +55,12 @@ jobs:
         with:
           commit-message: '[Auto] update pre-puilt dist packages'
         remote: origin
+      - name: Commit changes
+        uses: EndBug/add-and-commit@v5
+        with:
+          author_name: Your Name
+          author_email: mail@example.com
+          message: "Your commit message"
+          add: "data/tweets/*"
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
