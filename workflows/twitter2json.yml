@@ -31,7 +31,7 @@ jobs:
         uses: actions/github-script@v3
         with:
           script: |
-            const path = requrie('path')
+            const path = require('path')
             const fs = require('fs').promises
             const outputs = ${{toJSON(on.twitter.outputs)}}
             const promises = outputs.map((output) => {
