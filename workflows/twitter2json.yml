@@ -11,6 +11,7 @@ on:
     fetchAllResultsAtFirst: true
     config:
       active: true
+      force: true
       outputsMode: combine
       manualRunEvent:
         - workflow_dispatch
