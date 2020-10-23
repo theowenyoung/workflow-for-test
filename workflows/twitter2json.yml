@@ -8,13 +8,10 @@ on:
       access_token_secret: ${{ secrets.TWITTER_ACCESS_SECRET }}
     params:
       screen_name: theowenyoung
-      count: 8
     fetchAllResultsAtFirst: true
-    maxCount: 8
     config:
       active: true
       outputsMode: combine
-      force: true
       manualRunEvent:
         - workflow_dispatch
         - push
