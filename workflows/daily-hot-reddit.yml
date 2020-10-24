@@ -4,6 +4,8 @@ on:
     url: https://reddit.com/hot/
     config:
       outputsMode: combine
+      every: "59 23 * * *"
+      timeZone: UTC
 jobs:
   telegram:
     name: Send a telegram message
