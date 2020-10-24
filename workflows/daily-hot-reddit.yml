@@ -22,6 +22,7 @@ jobs:
 
             ${titles}
             ]`
+            return message
           result-encoding: string
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
