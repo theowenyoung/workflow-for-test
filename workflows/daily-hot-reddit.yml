@@ -1,0 +1,32 @@
+name: Send a daily digest telegram message about today's hot reddit posts
+on:
+  reddit:
+    url: https://reddit.com/hot/
+    config:
+      outputsMode: combine
+jobs:
+  telegram:
+    name: Send a telegram message
+    runs-on: ubuntu-latest
+    steps:
+      - name: Format message
+        id: format
+        uses: actions/github-script@v3
+        with:
+          script: |
+            const outputs =  ${{ toJSON(on.reddit.outputs) }};
+            const titles = outputs.map(item=>{
+              return `[item.title](${item.link})`
+            }).join('\n\n')
+            const message = `*${outputs.length} Hot reddit posts today*
+
+            ${titles}
+            ]`
+          result-encoding: string
+      - name: Send a telegram message
+        uses: appleboy/telegram-action@v0.1.0
+        with:
+          to: ${{ secrets.TELEGRAM_TO }}
+          token: ${{ secrets.TELEGRAM_TOKEN }}
+          message: ${{ steps.format.outputs.result }}
+          format: markdown
