@@ -11,23 +11,24 @@ jobs:
     steps:
       - name: Format message
         id: format
-        uses: actions/github-script@v3
+        uses: actions/github-script@v2
         with:
           script: |
-            const outputs =  ${{ toJSON(on.reddit.outputs) }};
-            const titles = outputs.map(item=>{
-              return `[item.title](${item.link})`
-            }).join('\n\n')
-            const message = `*${outputs.length} Hot reddit posts today*
+            const outputs = ${{ toJSON(on.reddit.outputs) }};
+            const titles = outputs.map((item,index)=>{
+              return `<a href="${item.link}">${index+1}. ${item.title}</a>`
+            }).join(`
+
+            `);
+            const message = `<b>${outputs.length} Hot reddit posts today</b>
 
             ${titles}
-            ]`
-            return message
-          result-encoding: string
+            `
+            return {message:message}
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: ${{ steps.format.outputs.result }}
-          format: markdown
+          message: ${{fromJSON(steps.format.outputs.result).message}}
+          format: html
