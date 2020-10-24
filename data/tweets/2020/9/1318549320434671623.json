@@ -1,0 +1,265 @@
+{
+  "contributors": null,
+  "coordinates": null,
+  "created_at": "Tue Oct 20 13:47:10 +0000 2020",
+  "display_text_range": [
+    0,
+    114
+  ],
+  "entities": {
+    "hashtags": [
+      {
+        "indices": [
+          9,
+          15
+        ],
+        "text": "IFTTT"
+      },
+      {
+        "indices": [
+          20,
+          31
+        ],
+        "text": "Entwickler"
+      },
+      {
+        "indices": [
+          38,
+          48
+        ],
+        "text": "kostenlos"
+      },
+      {
+        "indices": [
+          50,
+          62
+        ],
+        "text": "Actionsflow"
+      }
+    ],
+    "symbols": [],
+    "urls": [
+      {
+        "display_url": "t3n.de/news/actionsfl…",
+        "expanded_url": "https://t3n.de/news/actionsflow-statt-ifttt-setzt-1326077/",
+        "indices": [
+          91,
+          114
+        ],
+        "url": "https://t.co/qshFtDkywC"
+      }
+    ],
+    "user_mentions": [
+      {
+        "id": 11060982,
+        "id_str": "11060982",
+        "indices": [
+          3,
+          7
+        ],
+        "name": "t3n Magazin",
+        "screen_name": "t3n"
+      }
+    ]
+  },
+  "favorite_count": 0,
+  "favorited": false,
+  "full_text": "RT @t3n: #IFTTT für #Entwickler, aber #kostenlos: #Actionsflow wird euch bekannt vorkommen https://t.co/qshFtDkywC",
+  "geo": null,
+  "id": 1318549320434671600,
+  "id_str": "1318549320434671623",
+  "in_reply_to_screen_name": null,
+  "in_reply_to_status_id": null,
+  "in_reply_to_status_id_str": null,
+  "in_reply_to_user_id": null,
+  "in_reply_to_user_id_str": null,
+  "is_quote_status": false,
+  "lang": "de",
+  "place": null,
+  "possibly_sensitive": false,
+  "retweet_count": 5,
+  "retweeted": true,
+  "retweeted_status": {
+    "contributors": null,
+    "coordinates": null,
+    "created_at": "Fri Oct 02 14:05:35 +0000 2020",
+    "display_text_range": [
+      0,
+      105
+    ],
+    "entities": {
+      "hashtags": [
+        {
+          "indices": [
+            0,
+            6
+          ],
+          "text": "IFTTT"
+        },
+        {
+          "indices": [
+            11,
+            22
+          ],
+          "text": "Entwickler"
+        },
+        {
+          "indices": [
+            29,
+            39
+          ],
+          "text": "kostenlos"
+        },
+        {
+          "indices": [
+            41,
+            53
+          ],
+          "text": "Actionsflow"
+        }
+      ],
+      "symbols": [],
+      "urls": [
+        {
+          "display_url": "t3n.de/news/actionsfl…",
+          "expanded_url": "https://t3n.de/news/actionsflow-statt-ifttt-setzt-1326077/",
+          "indices": [
+            82,
+            105
+          ],
+          "url": "https://t.co/qshFtDkywC"
+        }
+      ],
+      "user_mentions": []
+    },
+    "favorite_count": 3,
+    "favorited": false,
+    "full_text": "#IFTTT für #Entwickler, aber #kostenlos: #Actionsflow wird euch bekannt vorkommen https://t.co/qshFtDkywC",
+    "geo": null,
+    "id": 1312030974574723000,
+    "id_str": "1312030974574723072",
+    "in_reply_to_screen_name": null,
+    "in_reply_to_status_id": null,
+    "in_reply_to_status_id_str": null,
+    "in_reply_to_user_id": null,
+    "in_reply_to_user_id_str": null,
+    "is_quote_status": false,
+    "lang": "de",
+    "place": null,
+    "possibly_sensitive": false,
+    "retweet_count": 5,
+    "retweeted": true,
+    "source": "<a href=\"https://buffer.com\" rel=\"nofollow\">Buffer</a>",
+    "truncated": false,
+    "user": {
+      "contributors_enabled": false,
+      "created_at": "Tue Dec 11 20:18:56 +0000 2007",
+      "default_profile": false,
+      "default_profile_image": false,
+      "description": "Netzwerk & Magazin für digitale Zukunft.",
+      "entities": {
+        "description": {
+          "urls": []
+        },
+        "url": {
+          "urls": [
+            {
+              "display_url": "t3n.de",
+              "expanded_url": "http://t3n.de",
+              "indices": [
+                0,
+                23
+              ],
+              "url": "https://t.co/xSQNjqcWIZ"
+            }
+          ]
+        }
+      },
+      "favourites_count": 6669,
+      "follow_request_sent": false,
+      "followers_count": 161141,
+      "following": false,
+      "friends_count": 240,
+      "geo_enabled": true,
+      "has_extended_profile": false,
+      "id": 11060982,
+      "id_str": "11060982",
+      "is_translation_enabled": false,
+      "is_translator": false,
+      "lang": null,
+      "listed_count": 4123,
+      "location": "Hannover, Germany",
+      "name": "t3n Magazin",
+      "notifications": false,
+      "profile_background_color": "FFFFFF",
+      "profile_background_image_url": "http://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_image_url_https": "https://abs.twimg.com/images/themes/theme1/bg.png",
+      "profile_background_tile": false,
+      "profile_banner_url": "https://pbs.twimg.com/profile_banners/11060982/1518687761",
+      "profile_image_url": "http://pbs.twimg.com/profile_images/964072513679581184/4YV1Q0mR_normal.jpg",
+      "profile_image_url_https": "https://pbs.twimg.com/profile_images/964072513679581184/4YV1Q0mR_normal.jpg",
+      "profile_link_color": "CC0000",
+      "profile_sidebar_border_color": "000000",
+      "profile_sidebar_fill_color": "FFFFFF",
+      "profile_text_color": "444444",
+      "profile_use_background_image": true,
+      "protected": false,
+      "screen_name": "t3n",
+      "statuses_count": 85752,
+      "time_zone": null,
+      "translator_type": "none",
+      "url": "https://t.co/xSQNjqcWIZ",
+      "utc_offset": null,
+      "verified": true
+    }
+  },
+  "source": "<a href=\"https://mobile.twitter.com\" rel=\"nofollow\">Twitter Web App</a>",
+  "truncated": false,
+  "user": {
+    "contributors_enabled": false,
+    "created_at": "Sat Mar 21 09:24:27 +0000 2020",
+    "default_profile": true,
+    "default_profile_image": false,
+    "description": "Freelancer / perfectionism / workflow lover",
+    "entities": {
+      "description": {
+        "urls": []
+      }
+    },
+    "favourites_count": 12,
+    "follow_request_sent": false,
+    "followers_count": 12,
+    "following": false,
+    "friends_count": 75,
+    "geo_enabled": false,
+    "has_extended_profile": true,
+    "id": 1241294513575878700,
+    "id_str": "1241294513575878656",
+    "is_translation_enabled": false,
+    "is_translator": false,
+    "lang": null,
+    "listed_count": 1,
+    "location": "",
+    "name": "Owen Young",
+    "notifications": false,
+    "profile_background_color": "F5F8FA",
+    "profile_background_image_url": null,
+    "profile_background_image_url_https": null,
+    "profile_background_tile": false,
+    "profile_image_url": "http://pbs.twimg.com/profile_images/1241298955742273536/E26HEH2o_normal.jpg",
+    "profile_image_url_https": "https://pbs.twimg.com/profile_images/1241298955742273536/E26HEH2o_normal.jpg",
+    "profile_link_color": "1DA1F2",
+    "profile_sidebar_border_color": "C0DEED",
+    "profile_sidebar_fill_color": "DDEEF6",
+    "profile_text_color": "333333",
+    "profile_use_background_image": true,
+    "protected": false,
+    "screen_name": "TheOwenYoung",
+    "statuses_count": 14,
+    "time_zone": null,
+    "translator_type": "none",
+    "url": null,
+    "utc_offset": null,
+    "verified": false
+  }
+}
