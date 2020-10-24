@@ -42,8 +42,17 @@ jobs:
                 }).then(()=>{
                   return fs.writeFile(
                       tweetFilePath,
-                      JSON.stringify(output, null, 2)
-                  );
+                      JSON.stringify(output, null, 2),
+                      {
+                        flag: "wx"
+                      }
+                  ).catch((e) => {
+                    if (e.code === "EEXIST") {
+                      return Promise.resolve();
+                    } else {
+                      return Promise.reject(e);
+                    }
+                  });
                 })
   
             });
