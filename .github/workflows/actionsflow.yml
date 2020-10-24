@@ -14,7 +14,7 @@ jobs:
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@fix/twitter
         with:
-          args: "build -i \"twitter*\""
+          args: "build -i \"daily*\""
           json-secrets: ${{ toJSON(secrets) }}
           json-github: ${{ toJSON(github) }}
       - name: Setup act
