@@ -36,7 +36,7 @@ jobs:
             const outputs = ${{toJSON(on.twitter.outputs)}}
             const promises = outputs.map((output) => {
                 const createdAt = new Date(Date.parse(output.created_at))
-                const tweetFilePath = `./data/tweets/${createdAt.getFullYear()}/${createdAt.getFullMonth()}/${output.id_str}.json`
+                const tweetFilePath = `./data/tweets/${createdAt.getUTCFullYear()}/${createdAt.getUTCMonth()}/${output.id_str}.json`
                 return fs.mkdir(path.dirname(tweetFilePath), {
                     recursive: true
                 }).then(()=>{
