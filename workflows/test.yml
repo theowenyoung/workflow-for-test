@@ -1,6 +1,7 @@
 on:
   script:
     config:
+      active: false
       debug: true
     run: |
       return [{title:"test",id:"1"}]

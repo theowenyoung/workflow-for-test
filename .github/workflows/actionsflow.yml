@@ -12,13 +12,12 @@ jobs:
     steps:
       - uses: actions/checkout@v2
       - name: Run Actionsflow
-        uses: actionsflow/actionsflow-action@fix/twitter
+        uses: actionsflow/actionsflow-action@v1
         with:
-          args: "build -i \"daily*\""
+          args: "build"
           json-secrets: ${{ toJSON(secrets) }}
           json-github: ${{ toJSON(github) }}
       - name: Setup act
-        uses: actionsflow/setup-act-for-actionsflow@main
-      - run: cat ~/.actrc
+        uses: actionsflow/setup-act-for-actionsflow@v1
       - name: Run act
         run: act --workflows ./dist/workflows --secret-file ./dist/.secrets --eventpath ./dist/event.json --env-file ./dist/.env

@@ -10,7 +10,7 @@ on:
       screen_name: theowenyoung
     fetchAllResultsAtFirst: true
     config:
-      active: true
+      active: false
       force: true
       outputsMode: combine
       manualRunEvent:
