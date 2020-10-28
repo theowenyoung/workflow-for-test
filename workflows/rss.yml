@@ -1,6 +1,8 @@
 on:
   rss:
     url: https://hnrss.org/newest?count=15
+    config:
+      active: false
 jobs:
   print:
     name: Print

@@ -1,6 +1,7 @@
 on:
   script:
     config:
+      active: false
       every: 45 * * * *
     run: |
       return [{title:"digest",time:new Date(),id:Date.now()}]

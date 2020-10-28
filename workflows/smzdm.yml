@@ -3,6 +3,7 @@ on:
   rss:
     url: http://feed.smzdm.com/
     config:
+      active: false
       filter:
         title:
           $regex: 历史低价
