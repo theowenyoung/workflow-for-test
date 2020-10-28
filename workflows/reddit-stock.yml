@@ -12,5 +12,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            *Stock:* [${{ on.rss.outputs.title}}](${{on.rss.outputs.link}})
+            *Stock:* [${{ on.reddit.outputs.title}}](${{on.reddit.outputs.link}})
           format: markdown
