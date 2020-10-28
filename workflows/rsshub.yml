@@ -2,7 +2,7 @@ on:
   rsshub:
     path: /v2ex/topics/latest
     config:
-      active: false
+      active: true
       skipOnError: true
       format: |
         if (item.description) {
