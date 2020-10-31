@@ -1,9 +1,9 @@
 name: Send a daily digest telegram message about today's hot reddit posts
 on:
   reddit:
-    active: false
     url: https://reddit.com/top/
     config:
+      active: false
       outputsMode: combine
 jobs:
   telegram:
