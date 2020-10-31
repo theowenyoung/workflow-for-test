@@ -6,11 +6,20 @@ jobs:
     name: Send a telegram message
     runs-on: ubuntu-latest
     steps:
+      - name: Translate to ZH
+        id: translate
+        uses: fabasoad/translation-action@main
+        with:
+          provider: microsoft
+          api_key: ${{ secrets.MICROSOFT_TRANSLATE_API_KEY }}
+          lang: 'zh-Hans'
+          api_additional_parameter: westus2
+          source: ${{ on.reddit.outputs.title}}
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
         with:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            *Stock:* [${{ on.reddit.outputs.title}}](${{on.reddit.outputs.link}})
+            *Stock:* [${{ steps.translate.outputs.text}}](${{on.reddit.outputs.link}})
           format: markdown

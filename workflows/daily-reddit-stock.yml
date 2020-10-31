@@ -1,13 +1,14 @@
-name: Send a daily digest telegram message about today's hot reddit posts
+name: Send a daily digest telegram message about today's hot reddit stock posts
 on:
   reddit:
-    active: false
-    url: https://reddit.com/top/
+    url: https://www.reddit.com/r/stocks/top/
     config:
+      active: false
       outputsMode: combine
+      limit: 5
 jobs:
   telegram:
-    name: Send a telegram message
+    name: Send a stock telegram message
     runs-on: ubuntu-latest
     steps:
       - name: Format message
@@ -40,21 +41,30 @@ jobs:
           script: |
             const outputs = ${{ toJSON(on.reddit.outputs) }};
             const titleStr = process.env.TEXT || "";
-            const titleArray = titleStr.split('%0A')
+            let titleArray = titleStr.split('%0A')
+            titleArray = titleArray.map(item=>{
+              try{
+                const newItem = decodeURIComponent(decodeURIComponent(item))
+                return newItem
+              }catch(e){
+                return item
+              }
+            })
             const date = new Date()
             const titles = outputs.map((item,index)=>{
-              return `<a href="${item.link}">${index+1}. ${titleArray[index]}</a>`
+              return `<a href="${item.link}">${index+1}. ${(titleArray[index])}</a>`
             }).join(`
 
             `);
-            const message = `<b>${titleArray[0].slice(0,36)}...</b> #reddit每日热门
+            const message = `<b>${titleArray[0].slice(0,36)}...</b> #reddit股票频道
 
-            大家好，今天${date.getFullYear()}-${date.getMonth()}-${date.getDate()})有${outputs.length}个reddit热门帖给大家分享，如下：
+            大家好，今天${date.getFullYear()}-${date.getMonth()}-${date.getDate()})有${outputs.length}个reddit股票社区热门帖给大家分享，如下：
 
             ${titles}
 
             #reddit中文
             `
+            console.log('message',message)
             return {message:message}
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
