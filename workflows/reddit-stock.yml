@@ -21,5 +21,5 @@ jobs:
           to: ${{ secrets.TELEGRAM_TO }}
           token: ${{ secrets.TELEGRAM_TOKEN }}
           message: |
-            *Stock:* [${{ steps.translate.outputs.text}}](${{on.reddit.outputs.link}})
-          format: markdown
+            <b>Stock:</b> <a href="${{on.reddit.outputs.link}}">${{ steps.translate.outputs.text}}</a>
+          format: html
