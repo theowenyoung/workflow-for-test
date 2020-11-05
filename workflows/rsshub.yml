@@ -2,8 +2,9 @@ on:
   rsshub:
     path: /v2ex/topics/latest
     config:
-      active: false
+      active: true
       skipOnError: true
+      limit: 1
       format: |
         if (item.description) {
           item.description = item.description.replace(/<[^>]*>/g, "")
