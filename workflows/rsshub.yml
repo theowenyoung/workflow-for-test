@@ -2,7 +2,7 @@ on:
   rsshub:
     path: /v2ex/topics/latest
     config:
-      active: true
+      active: false
       skipOnError: true
       limit: 1
       format: |
