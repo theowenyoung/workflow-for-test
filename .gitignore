@@ -8,6 +8,7 @@ Icon
 
 # Actionsflow cache
 .actionsflow
+.secrets
 # Thumbnails
 ._*
 

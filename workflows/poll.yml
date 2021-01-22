@@ -1,0 +1,19 @@
+on:
+  poll:
+    url: https://www.reddit.com/.json?feed=5644cc6e7d67e589687abac81401a4d7f6f35937&user=theowenyoung
+    itemsPath: data.children
+    deduplicationKey:
+    config:
+      limit: 5
+      format: |
+        return item.data
+jobs:
+  print:
+    name: Print
+    runs-on: ubuntu-latest
+    steps:
+      - name: Print Outputs
+        env:
+          title: ${{ on.poll.outputs.title }}
+        run: |
+          echo "title: $title"

@@ -8,13 +8,15 @@ jobs:
     steps:
       - name: Translate to ZH
         id: translate
-        uses: fabasoad/translation-action@main
+        uses: theowenyoung/translation-action@main
         with:
-          provider: microsoft
-          api_key: ${{ secrets.MICROSOFT_TRANSLATE_API_KEY }}
-          lang: 'zh-Hans'
-          api_additional_parameter: westus2
+          provider: tencent
+          api_key: ${{ secrets.TENCENT_TRANSLATION_SECRET_KEY }}
+          lang: 'zh'
+          api_additional_parameter: ${{ secrets.TENCENT_TRANSLATION_SECRET_ID }}
           source: ${{ on.reddit.outputs.title}}
+          api_additional_parameter2: na-siliconvalley
+          api_additional_parameter3: en
       - name: Send a telegram message
         uses: appleboy/telegram-action@v0.1.0
         with:
