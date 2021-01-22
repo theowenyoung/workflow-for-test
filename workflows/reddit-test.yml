@@ -13,6 +13,7 @@ jobs:
         id: translate
         uses: actions/github-script@v2
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const mock = `我曾祖父阿莫斯 · 洛克拿着他祖父在 1775 年列克星敦战役中向英国人开火的步枪
             大多数人没有意识到什么比他们想象的要新？%0A佛罗里达州马加人赫克斯皮特布蒂吉格， 谁直上处理它%0A我减掉了 170 磅， 然后切除了 9 磅多余的皮肤。我的伤疤让我看起来像圣诞节前噩梦中的莎莉。
@@ -45,6 +46,7 @@ jobs:
         env:
           TEXT: ${{ steps.translate.outputs.result }}
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const outputs = ${{ toJSON(on.reddit.outputs) }};
             const titleStr = process.env.TEXT || "";

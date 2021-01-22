@@ -15,6 +15,7 @@ jobs:
         id: title
         uses: actions/github-script@v2
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const outputs = ${{ toJSON(on.reddit.outputs) }};
             const titles = outputs.map((item,index)=>{
@@ -39,6 +40,7 @@ jobs:
         env:
           TEXT: ${{ steps.translate.outputs.text }}
         with:
+          github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
             const outputs = ${{ toJSON(on.reddit.outputs) }};
             const titleStr = process.env.TEXT || "";
