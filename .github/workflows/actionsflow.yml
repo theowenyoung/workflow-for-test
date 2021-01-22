@@ -4,11 +4,15 @@ on:
   workflow_dispatch:
     inputs:
       workflow:
-        description: "Workflow file filter, you can use glob format to filter your workflows"
+        description: "Workflow file filter, you can use glob format to filter your workflows, the default value is empty value, means no filter will be using"
         required: false
         default: ""
       force:
         description: "Whether force to run workflow"
+        required: false
+        default: "false"
+      verbose:
+        description: "debug workflow"
         required: false
         default: "false"
 jobs:
@@ -20,7 +24,7 @@ jobs:
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@main
         with:
-          args: build -i ${{ github.event.inputs.workflow }} -f ${{github.event.inputs.force}}
+          args: build -i ${{ github.event.inputs.workflow }} -f ${{github.event.inputs.force}} --verbose ${{github.event.inputs.verbose}}
           json-secrets: ${{ toJSON(secrets) }}
           json-github: ${{ toJSON(github) }}
       - name: Setup act
