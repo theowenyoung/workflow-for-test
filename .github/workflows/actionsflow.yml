@@ -8,11 +8,11 @@ on:
         required: false
         default: ""
       force:
-        description: "--force: whether force to run workflow"
+        description: "--force: whether force to run workflow, true or false"
         required: false
         default: "false"
       verbose:
-        description: "--verbose: debug workflow"
+        description: "--verbose: debug workflow, true or false"
         required: false
         default: "false"
 jobs:
