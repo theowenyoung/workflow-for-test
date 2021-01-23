@@ -13,7 +13,7 @@ jobs:
     steps:
       - name: Format message
         id: title
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         with:
           github-token: ${{secrets.GITHUB_TOKEN}}
           script: |
@@ -36,7 +36,7 @@ jobs:
           api_additional_parameter3: en
       - name: Format message
         id: format
-        uses: actions/github-script@v2
+        uses: actions/github-script@v3
         env:
           TEXT: ${{ steps.translate.outputs.text }}
         with:
