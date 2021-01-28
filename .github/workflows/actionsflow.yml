@@ -15,6 +15,11 @@ on:
         description: "--verbose: debug workflow, true or false"
         required: false
         default: "false"
+  schedule:
+    - cron: "*/5 * * * *"
+  push:
+    branches:
+      - main
 jobs:
   run:
     runs-on: ubuntu-latest
@@ -24,7 +29,7 @@ jobs:
       - name: Run Actionsflow
         uses: actionsflow/actionsflow-action@v1
         with:
-          args: build --include ${{ github.event.inputs.include || ""}} -f ${{github.event.inputs.force || "false"}} --verbose ${{github.event.inputs.verbose || "false"}}
+          args: "build --include ${{ github.event.inputs.include || ''}} -f ${{github.event.inputs.force || 'false'}} --verbose ${{github.event.inputs.verbose || 'false'}}""
           json-secrets: ${{ toJSON(secrets) }}
           json-github: ${{ toJSON(github) }}
       - name: Setup act
