@@ -26,5 +26,11 @@
   },
   "bugs": {
     "url": "https://github.com/actionsflow/actionsflow-workflow-default/issues"
+  },
+  "dependencies": {
+    "cheerio": "*",
+    "remark": "^13.0.0",
+    "strip-markdown": "^4.0.0",
+    "unist-util-visit": "^2.0.3"
   }
 }

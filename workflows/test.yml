@@ -1,21 +1,18 @@
 on:
   script:
     config:
-      active: false
+      active: true
       debug: true
     run: |
-      return [{title:"test",id:"1"}]
+      return [{title:"test",id:"1",selftext_html:'hello , <a href="https://baidu.com">baidu</a>'}]
 jobs:
   notify:
     name: Send notifications
     runs-on: ubuntu-latest
     steps:
-      - name: Send a telegram message
-        uses: appleboy/telegram-action@v0.1.0
+      - name: Format reddit JSON
+        env:
+          OUTPUTS_PATH: ${{ on.reddit.outputs.path }}
+        uses: ./.github/actions/format
         with:
-          to: "-1001462218950"
-          token: ${{ secrets.TELEGRAM_TOKEN }}
-          message: |
-            channel:
-            *${{on.script.outputs.title}}*
-          format: markdown
+          function: reddit

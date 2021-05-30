@@ -3,7 +3,7 @@ on:
   reddit:
     url: https://www.reddit.com/r/stocks/top/
     config:
-      # active: false
+      active: false
       outputsMode: combine
       limit: 5
 jobs:
@@ -30,7 +30,7 @@ jobs:
           source: ${{steps.title.outputs.result}}
           provider: tencent
           api_key: ${{ secrets.TENCENT_TRANSLATION_SECRET_KEY }}
-          lang: 'zh'
+          lang: "zh"
           api_additional_parameter: ${{ secrets.TENCENT_TRANSLATION_SECRET_ID }}
           api_additional_parameter2: na-siliconvalley
           api_additional_parameter3: en

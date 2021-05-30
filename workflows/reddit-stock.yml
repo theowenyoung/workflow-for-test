@@ -1,6 +1,8 @@
 on:
   reddit:
     url: https://www.reddit.com/r/stocks/top/
+    config:
+      active: false
 jobs:
   telegram:
     name: Send a telegram message
@@ -12,7 +14,7 @@ jobs:
         with:
           provider: tencent
           api_key: ${{ secrets.TENCENT_TRANSLATION_SECRET_KEY }}
-          lang: 'zh'
+          lang: "zh"
           api_additional_parameter: ${{ secrets.TENCENT_TRANSLATION_SECRET_ID }}
           source: ${{ on.reddit.outputs.title}}
           api_additional_parameter2: na-siliconvalley

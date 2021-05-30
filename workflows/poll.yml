@@ -4,6 +4,7 @@ on:
     itemsPath: data.children
     deduplicationKey:
     config:
+      active: false
       limit: 5
       format: |
         return item.data
