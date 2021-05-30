@@ -11,6 +11,8 @@ jobs:
     name: Send notifications
     runs-on: ubuntu-latest
     steps:
+      - name: ls
+        run: ls /home/runner/work/workflow-for-test/workflow-for-test/_actions -l
       - name: Format reddit JSON
         env:
           OUTPUTS_PATH: ${{ on.reddit.outputs.path }}
