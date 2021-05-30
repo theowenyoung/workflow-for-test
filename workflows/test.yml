@@ -16,6 +16,6 @@ jobs:
       - name: Format reddit JSON
         env:
           OUTPUTS_PATH: /home/runner/work/workflow-for-test/workflow-for-test/test-data/reddit.json
-        uses: ./.github/actions/format
+        uses: .github/actions/format
         with:
           function: reddit
