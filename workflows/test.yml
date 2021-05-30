@@ -3,6 +3,7 @@ on:
     config:
       active: true
       debug: true
+      force: true
     run: |
       return [{title:"test",id:"1",selftext_html:'hello , <a href="https://baidu.com">baidu</a>'}]
 jobs:
