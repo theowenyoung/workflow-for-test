@@ -11,13 +11,11 @@ jobs:
     name: Send notifications
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
       - name: ls
         run: ls /home/runner/work/workflow-for-test/workflow-for-test -l
       - name: Format reddit JSON
         env:
           OUTPUTS_PATH: /home/runner/work/workflow-for-test/workflow-for-test/test-data/reddit.json
         uses: ./.github/actions/format
-
         with:
           function: reddit
