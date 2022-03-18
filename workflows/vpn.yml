@@ -3,6 +3,7 @@ on:
     url: https://hnrss.org/newest
     config:
       debug: true
+      force: true
 jobs:
   ifttt:
     name: Make a Request to IFTTT
