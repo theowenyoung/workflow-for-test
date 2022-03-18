@@ -1,7 +1,7 @@
 on:
   script:
     config:
-      active: true
+      active: false
       debug: true
       force: true
     run: |

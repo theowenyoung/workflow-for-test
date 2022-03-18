@@ -1,6 +1,8 @@
 on:
   rss:
     url: https://hnrss.org/newest
+    config:
+      debug: true
 jobs:
   ifttt:
     name: Make a Request to IFTTT
